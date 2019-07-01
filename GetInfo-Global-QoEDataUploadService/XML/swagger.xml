@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GetInfo-Global-QoEDataUploadService</name>
+    </assembly>
+    <members>
+        <member name="M:GetInfo_Global_QoEDataUploadService.Logger.Info(System.String,System.Exception)">
+            <summary>
+            普通日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:GetInfo_Global_QoEDataUploadService.Logger.Warn(System.String,System.Exception)">
+            <summary>
+            告警日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:GetInfo_Global_QoEDataUploadService.Logger.Error(System.String,System.Exception)">
+            <summary>
+            错误日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:GetInfo_Global_QoEDataUploadService.Controllers.CheckController.GetTime">
+            <summary>
+            获取服务器时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GetInfo_Global_QoEDataUploadService.NormalResponse">
+            <summary>
+            一般返回格式,JSON格式
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.NormalResponse.Result">
+            <summary>
+            处理结果，true:成功，false:失败
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.NormalResponse.Msg">
+            <summary>
+            处理消息或处理过程
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.NormalResponse.Errmsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.NormalResponse.Data">
+            <summary>
+            数据，可能是string或者json或者json数组
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.ID">
+            <summary>
+            [-]主键ID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.DateTime">
+            <summary>
+            [-]入库时间
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Day">
+            <summary>
+            [-]入库日期，由后台计算
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.AID">
+            <summary>
+            [*]AID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.RID">
+            <summary>
+            [-]跨表关联ID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.BusinessType">
+            <summary>
+            [*]业务类型
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.AppName">
+            <summary>
+            [*]APP名称
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.OSVersion">
+            <summary>
+            [*]系统版本,Android版本 / iOS版本
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Carrier">
+            <summary>
+            [*]运营商
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.IMSI">
+            <summary>
+            IMSI
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.IMEI">
+            <summary>
+            IMEI
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.RSRP">
+            <summary>
+            [*]信号强度-RSRP
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.SINR">
+            <summary>
+            [*]信号质量-SINR
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.RSRQ">
+            <summary>
+            [*]信号质量-RSRQ
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.TAC">
+            <summary>
+            [*]基站信息-TAC
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.PCI">
+            <summary>
+            [*]基站信息-PCI
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.MNC">
+            <summary>
+            [*]网络参数，MNC
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.EarFcn">
+            <summary>
+            [*]频点
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.ECI">
+            <summary>
+            [*]小区-ECI
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.ENodeBId">
+            <summary>
+            [-]基站ID，由ECI计算得出
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.CellId">
+            <summary>
+            [-]小区ID，由ECI计算得出
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.EnodebId_CellId">
+            <summary>
+            基站小区ID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.NetType">
+            <summary>
+            [*]网络类型 2G/3G/4G/WiFi
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.SigNalType">
+            <summary>
+            [*]信号类型
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Lon">
+            <summary>
+            [*]经度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Lat">
+            <summary>
+            [*]纬度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.BDLon">
+            <summary>
+            [-]百度经度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.BDLat">
+            <summary>
+            [-]百度纬度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.GDLon">
+            <summary>
+            [-]高德经度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.GDLat">
+            <summary>
+            [-]高德纬度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Province">
+            <summary>
+            [-]省，后台根据经纬度反解析出来
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.City">
+            <summary>
+            [-]市，后台根据经纬度反解析出来
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.District">
+            <summary>
+            [-]区，后台根据经纬度反解析出来
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Address">
+            <summary>
+            [-]详细地址，后台由经纬度反解析出来
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Accuracy">
+            <summary>
+            [*]精度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Altitude">
+            <summary>
+            [*]海拔
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.GpsSpeed">
+            <summary>
+            [*]GPS传感器运动速度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.SatelliteCount">
+            <summary>
+            [*]搜索到的卫星数量
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.AppVersion">
+            <summary>
+            [*]APP版本号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.IsUploadDataTimely">
+            <summary>
+            [*]是否是及时上报，1是  0否
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.WiFi_SSID">
+            <summary>
+            WiFi热点名称，若没连接WiFi可为空
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.WiFi_MAC">
+            <summary>
+            WiFi热点路由器设备mac地址，若没连接WiFi可为空
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Ping_Avg_Rtt">
+            <summary>
+            [*]平均Ping值
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.CPU">
+            <summary>
+            [*]CPU型号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.NeighbourList">
+            <summary>
+            邻区信息
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Adj_PCI1">
+            <summary>
+            [-]邻区列表[0]-PCI，后台从NeighbourList中取
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Adj_RSRP1">
+            <summary>
+            邻区列表[0]-RSRP，后台从NeighbourList中取
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.ADJ_EARFCN1">
+            <summary>
+            邻区列表[0]-EARFCN，后台从NeighbourList中取
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.IsScreenOn">
+            <summary>
+            [*]采集QoER数据时，屏幕是否亮屏
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.IsGPSOpen">
+            <summary>
+            [*]采集QoER数据时，GPS开关是否打开
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.IsOutSide">
+            <summary>
+            [-]采集QoER数据时，是否在室外，暂由后台根据搜星数量判断
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Phone_Electric">
+            <summary>
+            [*]采集QoER数据时，手机电量
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.Phone_Screen_Brightness">
+            <summary>
+            [*]采集QoER数据时，屏幕亮度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.XYZaSpeed">
+            <summary>
+            [*]xyz三轴加速度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.VMOS">
+            <summary>
+            [-]HTTP_Response_Time分值，后台计算
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.HTTP_URL">
+            <summary>
+            [*]HTTP请求-URL
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.HTTP_Response_Time">
+            <summary>
+            [*]HTTP请求-响应时间
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_QoEDataUploadService.QoERinfo.HTTP_BufferSize">
+            <summary>
+            [*]HTTP请求-总下载字节数
+            </summary>
+        </member>
+    </members>
+</doc>

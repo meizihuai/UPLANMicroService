@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GetInfo-Global-AccountService</name>
+    </assembly>
+    <members>
+        <member name="P:GetInfo_Global_AccountService.CacheManager.CacheObj">
+            <summary>
+            Cache
+            </summary>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Cache.Exists(System.String)">
+            <summary>
+            判断缓存是否存在
+            </summary>
+            <param name="key">键名</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Cache.GetCache``1(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <typeparam name="T">转换的类</typeparam>
+            <param name="key">键名</param>
+            <returns>转换为T类型的值</returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Cache.Save(System.String,System.Object)">
+            <summary>
+            保存缓存
+            </summary>
+            <param name="key">键名</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Cache.Save(System.String,System.Object,System.Int32)">
+            <summary>
+            保存缓存并设置绝对过期时间
+            </summary>
+            <param name="key">键名</param>
+            <param name="value">值</param>
+            <param name="expMinute">过期分钟数</param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Cache.Delete(System.String)">
+            <summary>
+            删除一个缓存
+            </summary>
+            <param name="key">要删除的key</param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Cache.Dispose">
+            <summary>
+            释放
+            </summary>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ITokenHelper.GetNewToken(GetInfo_Global_AccountService.UserInfo)">
+            <summary>
+            获取新Token
+            </summary>
+            <param name="usrInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ITokenHelper.ChangeNewToken(System.String)">
+            <summary>
+            定时更换token,检查过期
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ITokenHelper.CheckToken(System.String)">
+            <summary>
+            检查token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ITokenHelper.CheckAdminToken(System.String)">
+            <summary>
+            检查token所对应的用户的权限是否是管理员权限
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ITokenHelper.DecodeToken(System.String)">
+            <summary>
+            将token对应的JWT信息查询出来
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetInfo_Global_AccountService.JwtHelper">
+             <summary>
+            [已弃用] JWT  SHA256加密形式，但是token太长，且形成jwt和redis双处认证，耦合度高
+             </summary>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Logger.Info(System.String,System.Exception)">
+            <summary>
+            普通日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Logger.Warn(System.String,System.Exception)">
+            <summary>
+            告警日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Logger.Error(System.String,System.Exception)">
+            <summary>
+            错误日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.GetKeyForRedis(System.String)">
+            <summary>
+            取得redis的Key名称
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.Exists(System.String)">
+            <summary>
+            判断当前Key是否存在数据
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.GetCache``1(System.String)">
+            <summary>
+            取得缓存数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.SetCache(System.String,System.Object)">
+            <summary>
+            设置缓存数据
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.SetCache(System.String,System.Object,System.DateTime)">
+            <summary>
+            设置绝对过期时间
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiressAbsoulte"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.SetCache(System.String,System.Object,System.Int32)">
+            <summary>
+            设置相对过期时间
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expirationMinute"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.KeyMigrate(System.String,System.Net.EndPoint,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="endPoint"></param>
+            <param name="database"></param>
+            <param name="timeountseconds"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.RemoveCache(System.String)">
+            <summary>
+            移除redis
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.RedisCacheHelper.Dispose">
+            <summary>
+            销毁连接
+            </summary>
+        </member>
+        <member name="T:GetInfo_Global_AccountService.ShaHashHelper">
+            <summary>
+            SHA1 散列算法
+            </summary>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ShaHashHelper.GetSha1Hash(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="input">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.ShaHashHelper.VerifySha1Hash(System.String,System.String)">
+            <summary>
+            验证
+            </summary>
+            <param name="input"></param>
+            <param name="hash"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetInfo_Global_AccountService.Controllers.AccountController">
+            <summary>
+            账号认证服务
+            </summary>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Controllers.AccountController.Regist(GetInfo_Global_AccountService.UserInfo)">
+            <summary>
+            用户注册账号
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Controllers.AccountController.Login(System.String,System.String)">
+            <summary>
+            用户登陆
+            </summary>
+            <param name="usr">用户名</param>
+            <param name="pwd">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Controllers.AccountController.GetTokenInfo(System.String)">
+            <summary>
+            获取Token信息
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Controllers.AccountController.GetNewToken(System.String)">
+            <summary>
+            获取新Token，校验是否过期
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.Controllers.AccountController.GetTime">
+            <summary>
+            获取服务器时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GetInfo_Global_AccountService.QoEDeviceController">
+            <summary>
+            [APP接口]QoE设备注册、认证、AID服务
+            </summary>
+        </member>
+        <member name="M:GetInfo_Global_AccountService.QoEDeviceController.Login(System.String,System.String)">
+            <summary>
+            手机登录，获取AID
+            </summary>
+            <param name="phoneId">[*]手机唯一识别号，android用imei,iPhone用uuid</param>
+            <param name="system">[*]操作系统，android / ios</param>
+            <returns></returns>
+        </member>
+        <member name="T:GetInfo_Global_AccountService.NormalResponse">
+            <summary>
+            一般返回格式,JSON格式
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.NormalResponse.Result">
+            <summary>
+            处理结果，true:成功，false:失败
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.NormalResponse.Msg">
+            <summary>
+            处理消息或处理过程
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.NormalResponse.Errmsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.NormalResponse.Data">
+            <summary>
+            数据，可能是string或者json或者json数组
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.ID">
+            <summary>
+            [-]主键ID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.DateTime">
+            <summary>
+            [-]入库时间
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.AID">
+            <summary>
+            AID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.IMEI">
+            <summary>
+            手机串号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.IMSI">
+            <summary>
+            SIM卡号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.UUID">
+            <summary>
+            iOS设备ID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.GroupID">
+            <summary>
+            群组ID
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.Power">
+            <summary>
+            设备权限
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.Province">
+            <summary>
+            设备所在省
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.City">
+            <summary>
+            设备所在市
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.District">
+            <summary>
+            设备所在区
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.Lon">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.Lat">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.BDLon">
+            <summary>
+            百度坐标经度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.BDLat">
+            <summary>
+            百度坐标纬度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.GDLon">
+            <summary>
+            高德坐标经度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.GDLat">
+            <summary>
+            高德坐标纬度
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.PhoneModel">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.AppVersion">
+            <summary>
+            APP版本号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.SDKVersion">
+            <summary>
+            SDK版本号
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.IsOnline">
+            <summary>
+            是否在线
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.Carrier">
+            <summary>
+            运营商
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.System">
+            <summary>
+            操作系统， android / ios
+            </summary>
+        </member>
+        <member name="P:GetInfo_Global_AccountService.QoEDeviceInfo.RunScore">
+            <summary>
+            积分
+            </summary>
+        </member>
+    </members>
+</doc>
