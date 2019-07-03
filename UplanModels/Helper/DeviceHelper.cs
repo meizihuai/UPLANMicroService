@@ -5,8 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 
-
-namespace GetInfo_Global_DataToDbService
+namespace UplanModels
 {
     public class DeviceHelper
     {

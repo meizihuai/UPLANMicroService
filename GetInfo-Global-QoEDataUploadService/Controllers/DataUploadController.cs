@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft;
 using Newtonsoft.Json;
+using UplanModels;
 
 namespace GetInfo_Global_QoEDataUploadService.Controllers
 {
@@ -29,7 +30,7 @@ namespace GetInfo_Global_QoEDataUploadService.Controllers
                 if (info == null) return new NormalResponse(false, "QoER格式非法");
                 NormalResponse np = info.Check();
                 if (!np.result) return np;
-                info.CheckInfo();
+                info.MakeInfo();
                 using(MQProducter p = MQProducter.Creat())
                 {
                     if (p.Connect(Module.MQ_Data_QoER_QueueName))

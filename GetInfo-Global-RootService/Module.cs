@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using UplanModels;
 
 namespace GetInfo_Global_RootService
 {
@@ -39,7 +39,7 @@ namespace GetInfo_Global_RootService
         }
         public static void Log(string str)
         {
-            Console.WriteLine(DateTime.Now.ToString("[HH:mm:ss] ") + str);
+            Console.WriteLine(TimeUtil.Now().ToString("[HH:mm:ss] ") + str);
             if (IsLogger)
             {
                 Logger.Info(str);

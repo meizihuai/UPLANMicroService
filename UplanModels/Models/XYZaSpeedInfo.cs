@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace GetInfo_Global_DataToDbService
+namespace UplanModels
 {
     public class XYZaSpeedInfo
     {

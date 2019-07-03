@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-namespace GetInfo_Global_QoEDataUploadService
+
+namespace UplanModels
 {
     /// <summary>
     /// 一般返回格式,JSON格式

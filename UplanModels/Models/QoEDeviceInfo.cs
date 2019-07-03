@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GetInfo_Global_AccountService
+namespace UplanModels
 {
     [Table("QoEDeviceTable")]
     public class QoEDeviceInfo

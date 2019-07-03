@@ -4,21 +4,6 @@
         <name>GetInfo-Global-RootService</name>
     </assembly>
     <members>
-        <member name="M:GetInfo_Global_RootService.HttpHelper.GetResponse(System.String)">
-            <summary>
-            get请求
-            </summary>
-            <param name="url"></param>
-            <returns></returns>       
-        </member>
-        <member name="M:GetInfo_Global_RootService.HttpHelper.PostResponse(System.String,System.String)">
-            <summary>
-            post请求
-            </summary>
-            <param name="url"></param>
-            <param name="postData">post数据</param>
-            <returns></returns>
-        </member>
         <member name="M:GetInfo_Global_RootService.Logger.Info(System.String,System.Exception)">
             <summary>
             普通日志
@@ -45,7 +30,7 @@
             账号认证服务
             </summary>
         </member>
-        <member name="M:GetInfo_Global_RootService.Controllers.AccountController.Regist(GetInfo_Global_RootService.UserInfo)">
+        <member name="M:GetInfo_Global_RootService.Controllers.AccountController.Regist(UplanModels.UserInfo)">
             <summary>
             用户注册账号
             </summary>
@@ -90,7 +75,7 @@
             [APP接口]数据上传
             </summary>
         </member>
-        <member name="M:GetInfo_Global_RootService.Controllers.QoEDataUploadController.UploadQoER(GetInfo_Global_RootService.QoERinfo)">
+        <member name="M:GetInfo_Global_RootService.Controllers.QoEDataUploadController.UploadQoER(UplanModels.QoERinfo)">
             <summary>
             [APP]上传QoER数据
             </summary>
@@ -110,312 +95,7 @@
             <param name="system">[*]操作系统，android / ios</param>
             <returns></returns>
         </member>
-        <member name="T:GetInfo_Global_RootService.NormalResponse">
-            <summary>
-            一般返回格式,JSON格式
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.NormalResponse.result">
-            <summary>
-            处理结果，true:成功，false:失败
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.NormalResponse.msg">
-            <summary>
-            处理消息或处理过程
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.NormalResponse.errmsg">
-            <summary>
-            错误信息
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.NormalResponse.data">
-            <summary>
-            数据，可能是string或者json或者json数组
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.ID">
-            <summary>
-            [-]主键ID
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.DateTime">
-            <summary>
-            [-]入库时间
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Day">
-            <summary>
-            [-]入库日期，由后台计算
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.AID">
-            <summary>
-            [*]AID
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.RID">
-            <summary>
-            [-]跨表关联ID
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.BusinessType">
-            <summary>
-            [*]业务类型
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.AppName">
-            <summary>
-            [*]APP名称
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.OSVersion">
-            <summary>
-            [*]系统版本,Android版本 / iOS版本
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Carrier">
-            <summary>
-            [*]运营商
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.RSRP">
-            <summary>
-            [*]信号强度-RSRP
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.SINR">
-            <summary>
-            [*]信号质量-SINR
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.RSRQ">
-            <summary>
-            [*]信号质量-RSRQ
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.TAC">
-            <summary>
-            [*]基站信息-TAC
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.PCI">
-            <summary>
-            [*]基站信息-PCI
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.MNC">
-            <summary>
-            [*]网络参数，MNC
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.EarFcn">
-            <summary>
-            [*]频点
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.ECI">
-            <summary>
-            [*]小区-ECI
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.ENodeBId">
-            <summary>
-            [-]基站ID，由ECI计算得出
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.CellId">
-            <summary>
-            [-]小区ID，由ECI计算得出
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.EnodebId_CellId">
-            <summary>
-            基站小区ID
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.NetType">
-            <summary>
-            [*]网络类型 2G/3G/4G/WiFi
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.SignalType">
-            <summary>
-            [*]信号类型
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Lon">
-            <summary>
-            [*]经度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Lat">
-            <summary>
-            [*]纬度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.BDLon">
-            <summary>
-            [-]百度经度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.BDLat">
-            <summary>
-            [-]百度纬度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.GDLon">
-            <summary>
-            [-]高德经度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.GDLat">
-            <summary>
-            [-]高德纬度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Province">
-            <summary>
-            [-]省，后台根据经纬度反解析出来
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.City">
-            <summary>
-            [-]市，后台根据经纬度反解析出来
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.District">
-            <summary>
-            [-]区，后台根据经纬度反解析出来
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Address">
-            <summary>
-            [-]详细地址，后台由经纬度反解析出来
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Accuracy">
-            <summary>
-            [*]精度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Altitude">
-            <summary>
-            [*]海拔
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.GpsSpeed">
-            <summary>
-            [*]GPS传感器运动速度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.SatelliteCount">
-            <summary>
-            [*]搜索到的卫星数量
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.AppVersion">
-            <summary>
-            [*]APP版本号
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.IsUploadDataTimely">
-            <summary>
-            [*]是否是及时上报，1是  0否
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.WiFi_SSID">
-            <summary>
-            WiFi热点名称，若没连接WiFi可为空
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.WiFi_MAC">
-            <summary>
-            WiFi热点路由器设备mac地址，若没连接WiFi可为空
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Ping_Avg_Rtt">
-            <summary>
-            [*]平均Ping值
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.CPU">
-            <summary>
-            [*]CPU型号
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.NeighbourList">
-            <summary>
-            邻区信息
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Adj_PCI1">
-            <summary>
-            [-]邻区列表[0]-PCI，后台从NeighbourList中取
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Adj_RSRP1">
-            <summary>
-            邻区列表[0]-RSRP，后台从NeighbourList中取
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.ADJ_EARFCN1">
-            <summary>
-            邻区列表[0]-EARFCN，后台从NeighbourList中取
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.IsScreenOn">
-            <summary>
-            [*]采集QoER数据时，屏幕是否亮屏
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.IsGPSOpen">
-            <summary>
-            [*]采集QoER数据时，GPS开关是否打开
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.IsOutSide">
-            <summary>
-            [-]采集QoER数据时，是否在室外，暂由后台根据搜星数量判断
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Phone_Electric">
-            <summary>
-            [*]采集QoER数据时，手机电量
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.Phone_Screen_Brightness">
-            <summary>
-            [*]采集QoER数据时，屏幕亮度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.XYZaSpeed">
-            <summary>
-            [*]xyz三轴加速度
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.VMOS">
-            <summary>
-            [-]HTTP_Response_Time分值，后台计算
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.HTTP_URL">
-            <summary>
-            [*]HTTP请求-URL
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.HTTP_Response_Time">
-            <summary>
-            [*]HTTP请求-响应时间
-            </summary>
-        </member>
-        <member name="P:GetInfo_Global_RootService.QoERinfo.HTTP_BufferSize">
-            <summary>
-            [*]HTTP请求-总下载字节数
-            </summary>
-        </member>
-        <member name="M:GetInfo_Global_RootService.IAccountService.Regist(GetInfo_Global_RootService.UserInfo)">
+        <member name="M:GetInfo_Global_RootService.IAccountService.Regist(UplanModels.UserInfo)">
             <summary>
             用户注册账号
             </summary>
@@ -452,7 +132,7 @@
             <param name="system">[*]操作系统，android / ios</param>
             <returns></returns>
         </member>
-        <member name="M:GetInfo_Global_RootService.IQoEDeviceService.UploadQoER(GetInfo_Global_RootService.QoERinfo)">
+        <member name="M:GetInfo_Global_RootService.IQoEDeviceService.UploadQoER(UplanModels.QoERinfo)">
             <summary>
             [APP]手机上传QoER数据
             </summary>

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using UplanModels;
 
 namespace GetInfo_Global_QoEDataUploadService
 {
@@ -44,7 +44,7 @@ namespace GetInfo_Global_QoEDataUploadService
         }
         public static void Log(string str)
         {
-            Console.WriteLine(DateTime.Now.ToString("[HH:mm:ss] ") + str);
+            Console.WriteLine(TimeUtil.Now().ToString("[HH:mm:ss] ") + str);
             if (IsLogger)
             {
                 Logger.Info(str);

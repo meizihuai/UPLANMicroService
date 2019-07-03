@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace GetInfo_Global_DataToDbService
+namespace UplanModels
 {
-    [Table("QoERTable")]
     public class QoERinfo
     {
         /// <summary>
@@ -202,7 +200,7 @@ namespace GetInfo_Global_DataToDbService
         /// <summary>
         /// [*]采集QoER数据时，GPS开关是否打开
         /// </summary>
-        public int? IsGpsOpen { get; set; }
+        public int? IsGPSOpen { get; set; }
         /// <summary>
         /// [-]采集QoER数据时，是否在室外，暂由后台根据搜星数量判断
         /// </summary>
@@ -236,12 +234,17 @@ namespace GetInfo_Global_DataToDbService
         /// [*]HTTP请求-总下载字节数
         /// </summary>
         public long? HTTP_BufferSize { get; set; }
-     
+
         public NormalResponse Check()
         {
             if (string.IsNullOrEmpty(AID)) return new NormalResponse(false, "AID不可为空");
             return new NormalResponse(true, "");
         }
+        public void MakeInfo()
+        {
+            DateTime now = TimeUtil.Now();
+            this.DateTime = now.ToString("yyyy-MM-dd HH:mm:ss");
+            this.Day = now.ToString("yyyy-MM-dd");
+        }
     }
 }
-
